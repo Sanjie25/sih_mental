@@ -8,6 +8,7 @@ marshmallow-sqlalchemy
 marshmallow
 flask-cors
 pymysql
+google-genai
 python-dotenv
 werkzeug
 flask-jwt-extended
