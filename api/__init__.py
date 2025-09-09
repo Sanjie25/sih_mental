@@ -17,20 +17,20 @@ ma = Marshmallow()
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
 
-    app.config["SQLALCHEMY_DATABASE_URI"] = (
-        os.environ.get("SQLALCHEMY_DATABASE_URI")
-        or "mysql+pymysql://user:password@localhost/mentalapp"
-    )
+    # app.config["SQLALCHEMY_DATABASE_URI"] = (
+    #     os.environ.get("SQLALCHEMY_DATABASE_URI")
+    #     or "mysql+pymysql://user:password@localhost/mentalapp"
+    # )
     CORS(app)
 
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") or "secret-key"
 
-    db.init_app(app)
+    # db.init_app(app)
     login_manager.init_app(app)
     ma.init_app(app)
 
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
 
     # configuring the login login_manager
     # login_manager.login_view = "auth.login"
