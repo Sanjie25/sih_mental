@@ -9,17 +9,21 @@ client = genai.Client(
     api_key=os.environ.get("GOOGLE_API_KEY"),
 )
 
-#response = client.models.generate_content(
+# response = client.models.generate_content(
 #    model="gemini-2.5-flash",
 #    contents="Explain how AI works in a few words",
 #    config=types.GenerateContentConfig(
 #        thinking_config=types.ThinkingConfig(thinking_budget=0)  # Disables thinking
 #    ),
-#)
-#print(response.text)
+# )
+# print(response.text)
+
 
 def get_response(prompt):
-    prompt = "Assume you are a mental health expert and are helping struggling and stressed campus students, so reply to the following question: \n" + prompt
+    prompt = (
+        "Assume you are a mental health expert and are helping struggling and stressed campus students, so reply to the following question in the language of the folowing prompt, in hindi or english or hinglish if given and act as if it is a conversation: \n"
+        + prompt
+    )
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=prompt,
@@ -28,3 +32,4 @@ def get_response(prompt):
         ),
     )
     return response.text
+
