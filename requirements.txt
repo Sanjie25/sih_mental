@@ -1,0 +1,13 @@
+cryptography
+flask
+flask-sqlalchemy
+flask-cors
+flask-login
+flask-marshmallow
+marshmallow-sqlalchemy
+marshmallow
+flask-cors
+psycopg2
+python-dotenv
+werkzeug
+flask-jwt-extended
