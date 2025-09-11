@@ -21,7 +21,7 @@ client = genai.Client(
 
 def get_response(prompt):
     prompt = (
-        "Assume you are a mental health expert and are helping struggling and stressed campus students, so reply to the following question in the language of the folowing prompt, in hindi or english or hinglish if given and act as if it is a conversation: \n"
+        "Assume you are a mental health expert and are helping struggling and stressed campus students, so reply to the following question in the language of the folowing prompt, in hindi or english or based on the folowing prompt's language and act as if it is a conversation and preferably keep answers short and friendly: \n"
         + prompt
     )
     response = client.models.generate_content(
@@ -32,4 +32,3 @@ def get_response(prompt):
         ),
     )
     return response.text
-
