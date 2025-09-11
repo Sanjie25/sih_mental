@@ -29,7 +29,7 @@ def get_response(prompt):
         contents=prompt,
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(
-                thinking_budget=-1
+                thinking_budget=0
             )  # Disables thinking
         ),
     )
